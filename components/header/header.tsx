@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "../theme/mode-toggle";
+import Logout from "./logout";
 
 export default function Header() {
   return (
@@ -22,6 +23,7 @@ export default function Header() {
 
       <div className="flex gap-1 items-center">
         <ModeToggle />
+        <Logout />
       </div>
     </header>
   );

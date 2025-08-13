@@ -58,7 +58,7 @@ function Button({
       {...props}
     >
       {loading && <Loader2Icon className="animate-spin" />}
-      {children}
+      {!(size === "icon" && loading) && children}
     </Comp>
   );
 }

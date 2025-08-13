@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
 import MainLayout from "@/components/main-layout/main-layout";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -44,6 +45,8 @@ export default function RootLayout({
           <MainLayout>{children}</MainLayout>
           <Footer />
         </Providers>
+
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
