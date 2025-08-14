@@ -1,15 +1,13 @@
-import { columns, Tag } from "./(table)/columns";
-import { DataTable } from "./(table)/data-table";
+import { Tag } from "./(table)/columns";
+import Table from "./(table)/table";
 import { getTags } from "./actions";
 
 async function getData(): Promise<Tag[]> {
-  const { success, data, error } = await getTags();
+  const { success, data } = await getTags();
 
   if (success) {
     return data;
   }
-
-  console.log(error);
 
   return [];
 }
@@ -17,9 +15,5 @@ async function getData(): Promise<Tag[]> {
 export default async function TagsPage() {
   const data = await getData();
 
-  return (
-    <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
-    </div>
-  );
+  return <Table data={data} />;
 }
